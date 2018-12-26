@@ -1,0 +1,41 @@
+<p id="timer"></p>
+
+<style>
+    p {
+      color: red;
+      font-size: 75px;
+      text-align:center;
+      position: absolute;              
+      top: 30%;                        
+      transform: translate(0, -50%);
+    }
+  </style>
+<body      background="https://us.123rf.com/450wm/erika8213/erika82131510/erika8213151000138/46966034-fireworks-at-new-year-and-copy-space.jpg?ver=6";></body>
+<script>
+
+var countDownDate = new Date("Jan 1, 2019 00:00:00").getTime();
+
+
+var x = setInterval(function() {
+
+  
+var now = new Date().getTime();
+
+  
+var distance = countDownDate - now;
+
+  
+var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+document.getElementById("timer").innerHTML = days + " days <br> "+ hours + " hours <br> "
+  + minutes + " minutes  " + seconds + " seconds  ";
+
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "HAPPY NEW YEAR";
+  }
+}, 1000);
+</script>
